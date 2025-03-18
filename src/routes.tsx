@@ -1,22 +1,22 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
+import ProductPage from "./pages/ProductPage";
+import ContactPage from "./pages/ContactPage";
+import AboutPage from "./pages/AboutPage";
 import ProductDetail from "./pages/ProductDetail";
-import NotFound from "./pages/NotFound";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 
-const AppRoutes = () => {
+function App() {
   return (
-    <BrowserRouter>
-      <Header />
+    <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/products" element={<ProductPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/about" element={<AboutPage />} />
         <Route path="/product/:id" element={<ProductDetail />} />
-        <Route path="*" element={<NotFound />} />
       </Routes>
-      <Footer />
-    </BrowserRouter>
+    </Router>
   );
-};
+}
 
-export default AppRoutes;
+export default App;

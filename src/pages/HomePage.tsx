@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
+import Header from "../components/Header";
+import Banner from "../components/Banner";
 import ProductCard from "../components/ProductCard";
+import Footer from "../components/Footer";
 
 interface Product {
   id: number;
@@ -15,20 +18,23 @@ const HomePage = () => {
     fetch("http://localhost:3001/products")
       .then((res) => res.json())
       .then((data) => setProducts(data))
-      .catch((error) => console.error("Lỗi khi tải sản phẩm:", error));
+      .catch((error) => console.error("Lỗi tải sản phẩm:", error));
   }, []);
 
   return (
-    <div className="container mx-auto p-6">
-      <h1 className="text-3xl font-bold text-center mb-6">Danh sách sản phẩm</h1>
-      
-      {/* Grid 3 cột, khoảng cách đều nhau */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
+    <>
+      <Header />
+      <Banner />
+      <div className="container my-5">
+        <h2 className="text-center fw-bold mb-4">SẢN PHẨM NỔI BẬT</h2>
+        <div className="row">
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 
