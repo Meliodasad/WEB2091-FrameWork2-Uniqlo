@@ -4,6 +4,8 @@ import ProductPage from "./pages/ProductPage";
 import ContactPage from "./pages/ContactPage";
 import AboutPage from "./pages/AboutPage";
 import ProductDetail from "./pages/ProductDetail";
+import Login from "./pages/Login"; // Import trang đăng nhập
+import Register from "./pages/Register"; // Import trang đăng ký
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/product/:id" element={<ProductDetail />} />
+        <Route path="/login" element={<Login />} /> {/* Định tuyến đăng nhập */}
+        <Route path="/register" element={<Register />} /> {/* Định tuyến đăng ký */}
       </Routes>
     </Router>
   );
