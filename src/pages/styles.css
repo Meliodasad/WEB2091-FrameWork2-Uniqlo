@@ -1,0 +1,103 @@
+/* Nền overlay khi mở form */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Hộp đăng nhập/đăng ký */
+  .auth-container {
+    background: white;
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  /* Tiêu đề */
+  .auth-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Input */
+  .auth-input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: 0.3s;
+  }
+  
+  .auth-input:focus {
+    border-color: #666;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    outline: none;
+  }
+  
+  /* Checkbox và Quên mật khẩu */
+  .auth-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  .auth-options a {
+    color: #666;
+    text-decoration: none;
+  }
+  
+  .auth-options a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Nút đăng nhập/đăng ký */
+  .auth-button {
+    width: 100%;
+    background: black;
+    color: white;
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+  
+  .auth-button:hover {
+    background: #444;
+  }
+  
+  /* Đăng nhập với tài khoản khác */
+  .auth-divider {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #666;
+  }
+  
+  /* Đóng form */
+  .close-button {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 18px;
+    cursor: pointer;
+    color: #666;
+  }
+  
+  .close-button:hover {
+    color: black;
+  }
+  
