@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 
 const banners = [
-  "https://mir-s3-cdn-cf.behance.net/project_modules/1400/0941f274270633.5c2a304d9d375.jpg",
-  "https://vaqueroadvertising.com/wp-content/uploads/2019/12/file.gif",
-  "https://shelaf.net/wp-content/uploads/2017/12/Christmassive-Deals.jpg"
+  "https://i.pinimg.com/originals/df/30/cb/df30cb36898b47637df11655015350dc.png",
+  "https://im.uniqlo.com/global-cms/spa/res140e0d36854faaeb7edff1a21493ce89fr.jpg",
+  "https://th.bing.com/th/id/R.2232008e8eeaddc63c57e968faa3e24e?rik=KVQLXjWdxuhfmw&pid=ImgRaw&r=0"
 ];
 
 const Banner = () => {
@@ -19,14 +19,14 @@ const Banner = () => {
 
   return (
     <div id="bannerCarousel" className="carousel slide" data-bs-ride="carousel">
-      <div className="carousel-inner" style={{ maxHeight: "300px" }}>
+      <div className="carousel-inner" style={{ maxHeight: "500px" }}>
         {banners.map((src, index) => (
           <div key={index} className={`carousel-item ${index === currentIndex ? "active" : ""}`}>
             <img
               src={src}
               className="d-block w-100"
               alt={`Banner ${index + 1}`}
-              style={{ height: "300px", objectFit: "cover", borderRadius: "10px" }}
+              style={{ height: "500px", objectFit: "cover", borderRadius: "10px" }}
             />
           </div>
         ))}

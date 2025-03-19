@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Banner from "../components/Banner"; // Thêm banner
 
 interface Product {
   id: number;
@@ -18,7 +19,7 @@ const ProductPage = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("");
   const [selectedPrice, setSelectedPrice] = useState<string>("");
   const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 8;
+  const productsPerPage = 9;
 
   useEffect(() => {
     fetch("http://localhost:3001/products")
@@ -59,6 +60,8 @@ const ProductPage = () => {
   return (
     <>
       <Header />
+      <Banner /> {/* Thêm Banner */}
+
       <div className="container my-4">
         <h2 className="text-center fw-bold mb-4">SẢN PHẨM</h2>
 
