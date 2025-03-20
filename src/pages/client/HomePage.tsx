@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import Header from "../components/Header";
-import Banner from "../components/Banner";
-import ProductCard from "../components/ProductCard";
-import Footer from "../components/Footer";
+import Header from "../../components/Header";
+import Banner from "../../components/Banner";
+import ProductCard from "../../components/ProductCard";
+import Footer from "../../components/Footer";
 
 interface Product {
   id: number;

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import ProductCard from "../components/ProductCard";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import Banner from "../components/Banner"; // Thêm banner
+import ProductCard from "../../components/ProductCard";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import Banner from "../../components/Banner"; // Thêm banner
 
 interface Product {
   id: number;

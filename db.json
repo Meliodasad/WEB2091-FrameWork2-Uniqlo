@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Áo Thun Cotton Uniqlo",
       "price": 299000,
       "image": "https://th.bing.com/th/id/OIP.I-tRRU1dAP8Lo4PIbKx-1wHaHa?rs=1&pid=ImgDetMain",
@@ -9,7 +9,7 @@
       "category": "Áo Thun"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Áo Polo Dry Pique Uniqlo",
       "price": 499000,
       "image": "https://image.uniqlo.com/UQ/ST3/WesternCommon/imagesgoods/426627/item/goods_01_426627.jpg?width=734",
@@ -17,7 +17,7 @@
       "category": "Áo Polo"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Áo Khoác Gió Uniqlo",
       "price": 799000,
       "image": "https://th.bing.com/th/id/OIP.eeLopXt8tToS34vm43j5rwHaHa?rs=1&pid=ImgDetMain",
@@ -25,7 +25,7 @@
       "category": "Áo Khoác"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Quần Jeans Slim Fit Uniqlo",
       "price": 899000,
       "image": "https://th.bing.com/th/id/OIP.CmExwoVYYjn-MupwOFDGuAHaHa?rs=1&pid=ImgDetMain",
@@ -33,7 +33,7 @@
       "category": "Quần Jeans"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Quần Short Dry Ex Uniqlo",
       "price": 599000,
       "image": "https://th.bing.com/th/id/R.72efdfb9f2fc097f41fe8454a5aaf098?rik=3ADAKsbkzcq3cw&pid=ImgRaw&r=0",
@@ -41,7 +41,7 @@
       "category": "Quần Short"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Áo Sơ Mi Uniqlo",
       "price": 699000,
       "image": "https://th.bing.com/th/id/R.b362c0187cce4d3a1db49ba119315e36?rik=7YzjHNuCeceexw&pid=ImgRaw&r=0",
@@ -49,7 +49,7 @@
       "category": "Áo Sơ Mi"
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Áo BomBer Uniqlo",
       "price": 1699000,
       "image": "https://th.bing.com/th/id/OIP.w21syQrzRJI_HxtqgFj0YgHaHa?w=2000&h=2000&rs=1&pid=ImgDetMain",
@@ -57,7 +57,7 @@
       "category": "Áo Khoác"
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Áo Vest Uniqlo",
       "price": 2699000,
       "image": "https://th.bing.com/th/id/OIP.3xQcq7M5O2LyzZocamBMgAHaHa?rs=1&pid=ImgDetMain",
@@ -65,7 +65,7 @@
       "category": "Áo Vest"
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Áo Sơ Mi Uniqlo",
       "price": 699000,
       "image": "https://th.bing.com/th/id/R.b362c0187cce4d3a1db49ba119315e36?rik=7YzjHNuCeceexw&pid=ImgRaw&r=0",
@@ -73,7 +73,7 @@
       "category": "Áo Sơ Mi"
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Áo Sơ Mi Uniqlo",
       "price": 399000,
       "image": "https://th.bing.com/th/id/R.b362c0187cce4d3a1db49ba119315e36?rik=7YzjHNuCeceexw&pid=ImgRaw&r=0",
@@ -81,12 +81,35 @@
       "category": "Áo Sơ Mi"
     },
     {
-      "id": 11,
+      "id": "11",
       "name": "Áo Sơ Mi Uniqlo",
       "price": 299000,
       "image": "https://th.bing.com/th/id/R.b362c0187cce4d3a1db49ba119315e36?rik=7YzjHNuCeceexw&pid=ImgRaw&r=0",
       "description": "Áo sơ mi phong cách đơn giản, giữ ấm tốt, phù hợp cho mùa đông.",
       "category": "Áo Sơ Mi"
+    }
+  ],
+  "users": [
+    {
+      "email": "khaidaofpt@gmail.com",
+      "password": "$2a$10$/3awOwJtrq/8lkndxB9A8Oq4h//cWTKEOJetQpKPfm7ZxE8OOdOby",
+      "fullName": "Đào Sỹ Khải",
+      "role": "customer",
+      "id": "1"
+    },
+    {
+      "email": "khaidao@gmail.com",
+      "password": "$2a$10$GJzUqv5NIUlxrdQfB8AO1OCTNSMDX0uYjcf9jJrWDbhTCxtYd8Buy",
+      "fullName": "Đào Sỹ Khảiiiii",
+      "role": "customer",
+      "id": "2"
+    },
+    {
+      "id": "3834",
+      "fullName": "Lê Khải Hoàn",
+      "email": "khai@gmail.com",
+      "password": "khaikhai",
+      "role": "customer"
     }
   ]
 }

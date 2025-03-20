@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import ProductPage from "./pages/ProductPage";
-import ContactPage from "./pages/ContactPage";
-import AboutPage from "./pages/AboutPage";
-import ProductDetail from "./pages/ProductDetail";
-import Login from "./pages/login"; // Import trang đăng nhập
-import Register from "./pages/register"; // Import trang đăng ký
+import HomePage from "./pages/client/HomePage";
+import ProductPage from "./pages/client/ProductPage";
+import ContactPage from "./pages/client/ContactPage";
+import AboutPage from "./pages/client/AboutPage";
+import ProductDetail from "./pages/client/ProductDetail";
+import Login from "./pages/client/login"; // Import trang đăng nhập
+import Register from "./pages/client/register"; // Import trang đăng ký
 
 function App() {
   return (

@@ -1,0 +1,33 @@
+.admin-container {
+    display: flex;
+  }
+  
+  .admin-content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    min-height: 100vh;
+    background: #f4f6f9;
+    padding: 20px;
+  }
+  
+  .admin-header {
+    display: flex;
+    justify-content: flex-end;
+    background: white;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .logout-btn {
+    background: #e74c3c;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .logout-btn:hover {
+    background: #c0392b;
+  }
+  
