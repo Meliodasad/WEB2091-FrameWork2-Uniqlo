@@ -1,14 +1,20 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import "./styles.css";
+import "./styles.css"; // Đảm bảo file styles.css tồn tại
+
+interface FormData {
+  fullName: string;
+  email: string;
+  password: string;
+}
 
 const Register = () => {
   const [loading, setLoading] = useState(false);
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
   const navigate = useNavigate();
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: FormData) => {
     setLoading(true);
     try {
       const newUser = { ...data, role: "customer" };

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import ProductCard from "../../components/ProductCard";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -12,6 +13,10 @@ interface Product {
   category: string;
 }
 
+const useQuery = () => {
+  return new URLSearchParams(useLocation().search);
+};
+
 const ProductPage = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
@@ -19,7 +24,10 @@ const ProductPage = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("");
   const [selectedPrice, setSelectedPrice] = useState<string>("");
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchQuery, setSearchQuery] = useState("");
   const productsPerPage = 9;
+  const query = useQuery();
+  const searchParam = query.get("search") || "";
 
   useEffect(() => {
     fetch("http://localhost:3001/products")
@@ -35,7 +43,7 @@ const ProductPage = () => {
       .catch((error) => console.error("Lỗi tải sản phẩm:", error));
   }, []);
 
-  // Lọc sản phẩm theo danh mục & giá
+  // Lọc sản phẩm theo danh mục, giá & tìm kiếm
   useEffect(() => {
     let filtered = products;
 
@@ -48,9 +56,15 @@ const ProductPage = () => {
       filtered = filtered.filter((product) => product.price >= min && product.price <= max);
     }
 
+    if (searchParam) {
+      filtered = filtered.filter((product) =>
+        product.name.toLowerCase().includes(searchParam.toLowerCase())
+      );
+    }
+
     setFilteredProducts(filtered);
     setCurrentPage(1);
-  }, [selectedCategory, selectedPrice, products]);
+  }, [selectedCategory, selectedPrice, searchParam, products]);
 
   // Phân trang
   const indexOfLastProduct = currentPage * productsPerPage;
@@ -64,6 +78,24 @@ const ProductPage = () => {
 
       <div className="container my-4">
         <h2 className="text-center fw-bold mb-4">SẢN PHẨM</h2>
+
+        {/* Thanh tìm kiếm */}
+        <div className="row mb-4">
+          <div className="col-md-6 mx-auto">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Tìm kiếm sản phẩm..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              onKeyPress={(e) => {
+                if (e.key === "Enter") {
+                  window.location.href = `/products?search=${searchQuery}`;
+                }
+              }}
+            />
+          </div>
+        </div>
 
         {/* Bộ lọc */}
         <div className="row mb-4">

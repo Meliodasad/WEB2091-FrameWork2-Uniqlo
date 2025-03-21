@@ -110,6 +110,13 @@
       "email": "khai@gmail.com",
       "password": "khaikhai",
       "role": "customer"
+    },
+    {
+      "id": "4577",
+      "fullName": "Lê Khải Hoàn",
+      "email": "hoan@gmail.com",
+      "password": "123456",
+      "role": "customer"
     }
   ]
 }

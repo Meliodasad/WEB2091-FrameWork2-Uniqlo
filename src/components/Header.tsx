@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 const Header = () => {
   const [user, setUser] = useState<{ fullName: string } | null>(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false); // Trạng thái thanh tìm kiếm
+  const [searchQuery, setSearchQuery] = useState(""); // Giá trị tìm kiếm
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -16,7 +18,15 @@ const Header = () => {
   const handleLogout = () => {
     localStorage.removeItem("user");
     setUser(null);
-    navigate("/"); // Chuyển hướng về trang chủ sau khi đăng xuất
+    navigate("/");
+  };
+
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      navigate(`/products?search=${searchQuery}`);
+      setSearchOpen(false); // Đóng thanh tìm kiếm sau khi tìm
+    }
   };
 
   return (
@@ -60,13 +70,31 @@ const Header = () => {
               </Link>
             </li>
           </ul>
-          <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <Link className="nav-link" to="/search">
-                <i className="fas fa-search"></i>
-              </Link>
-            </li>
 
+          {/* Thanh tìm kiếm */}
+          <div className="ms-auto d-flex align-items-center">
+            {searchOpen && (
+              <form className="d-flex me-2" onSubmit={handleSearchSubmit}>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Tìm kiếm sản phẩm..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  autoFocus
+                />
+                <button type="submit" className="btn btn-light ms-2">
+                  Tìm Kiếm
+                </button>
+              </form>
+            )}
+            <button className="btn btn-dark" onClick={() => setSearchOpen(!searchOpen)}>
+              <i className="fas fa-search"></i>
+            </button>
+          </div>
+
+          {/* Người dùng & Giỏ hàng */}
+          <ul className="navbar-nav ms-3">
             {user ? (
               <li className="nav-item dropdown">
                 <button
@@ -92,7 +120,6 @@ const Header = () => {
                 </Link>
               </li>
             )}
-
             <li className="nav-item">
               <Link className="nav-link" to="/cart">
                 <i className="fas fa-shopping-cart"></i>

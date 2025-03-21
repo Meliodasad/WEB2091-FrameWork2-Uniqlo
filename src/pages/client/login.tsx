@@ -3,25 +3,32 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import "./styles.css";
 
+interface LoginFormData {
+  email: string;
+  password: string;
+}
+
 const Login = () => {
   const [loading, setLoading] = useState(false);
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm<LoginFormData>();
   const navigate = useNavigate();
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: LoginFormData) => {
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:3001/users");
-      const users = await res.json();
-      const user = users.find((u: any) => u.email === data.email && u.password === data.password);
+      const res = await fetch("http://localhost:3001/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
 
-      if (user) {
+      const result = await res.json();
+      if (res.ok) {
         alert("Đăng nhập thành công!");
-        localStorage.setItem("user", JSON.stringify(user));
-        setLoading(false);
-        navigate(user.role === "admin" ? "/admin" : "/");
+        localStorage.setItem("user", JSON.stringify(result.user));
+        navigate(result.user.role === "admin" ? "/admin" : "/");
       } else {
-        alert("Email hoặc mật khẩu không chính xác!");
+        alert(result.message || "Email hoặc mật khẩu không chính xác!");
       }
     } catch (error) {
       console.error("Lỗi đăng nhập:", error);
@@ -41,7 +48,7 @@ const Login = () => {
           {errors.email && <p className="error-message">{errors.email.message}</p>}
           <input type="password" {...register("password", { required: "Vui lòng nhập mật khẩu" })} placeholder="Mật khẩu *" className="auth-input" />
           {errors.password && <p className="error-message">{errors.password.message}</p>}
-          <button type="submit" className="auth-button">{loading ? "Đang xử lý..." : "Đăng nhập"}</button>
+          <button type="submit" className="auth-button" disabled={loading}>{loading ? "Đang xử lý..." : "Đăng nhập"}</button>
         </form>
         <p className="auth-divider">- Hoặc đăng nhập với -</p>
         <p className="text-center">Chưa có tài khoản? <Link to="/register" className="text-blue-500">Đăng ký</Link></p>
