@@ -16,23 +16,22 @@ const Login = () => {
   const onSubmit = async (data: LoginFormData) => {
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:3001/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-
-      const result = await res.json();
-      if (res.ok) {
-        alert("Đăng nhập thành công!");
-        localStorage.setItem("user", JSON.stringify(result.user));
-        navigate(result.user.role === "admin" ? "/admin" : "/");
-      } else {
-        alert(result.message || "Email hoặc mật khẩu không chính xác!");
+      const res = await fetch("http://localhost:3001/users");
+      if (!res.ok) throw new Error("Lỗi khi lấy dữ liệu người dùng");
+      
+      const users = await res.json();
+      const user = users.find((u: any) => u.email === data.email && u.password === data.password);
+      
+      if (!user) {
+        alert("Sai tài khoản hoặc mật khẩu!");
+        return;
       }
+      
+      localStorage.setItem("user", JSON.stringify(user));
+      alert("Đăng nhập thành công!");
+      navigate(user.role === "admin" ? "/admin" : "/");
     } catch (error) {
-      console.error("Lỗi đăng nhập:", error);
-      alert("Có lỗi xảy ra, vui lòng thử lại!");
+      alert("Lỗi kết nối đến server.");
     } finally {
       setLoading(false);
     }
@@ -44,14 +43,33 @@ const Login = () => {
         <span className="close-button" onClick={() => navigate("/")}>✖</span>
         <h2 className="auth-title">Đăng nhập</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <input type="email" {...register("email", { required: "Vui lòng nhập email" })} placeholder="Email *" className="auth-input" />
+          <input 
+            type="email" 
+            {...register("email", { required: "Vui lòng nhập email" })} 
+            placeholder="Email *" 
+            className="auth-input" 
+            disabled={loading}
+          />
           {errors.email && <p className="error-message">{errors.email.message}</p>}
-          <input type="password" {...register("password", { required: "Vui lòng nhập mật khẩu" })} placeholder="Mật khẩu *" className="auth-input" />
+
+          <input 
+            type="password" 
+            {...register("password", { required: "Vui lòng nhập mật khẩu" })} 
+            placeholder="Mật khẩu *" 
+            className="auth-input" 
+            disabled={loading}
+          />
           {errors.password && <p className="error-message">{errors.password.message}</p>}
-          <button type="submit" className="auth-button" disabled={loading}>{loading ? "Đang xử lý..." : "Đăng nhập"}</button>
+
+          <button type="submit" className="auth-button" disabled={loading}>
+            {loading ? "Đang xử lý..." : "Đăng nhập"}
+          </button>
         </form>
+        
         <p className="auth-divider">- Hoặc đăng nhập với -</p>
-        <p className="text-center">Chưa có tài khoản? <Link to="/register" className="text-blue-500">Đăng ký</Link></p>
+        <p className="text-center">
+          Chưa có tài khoản? <Link to="/register" className="text-blue-500">Đăng ký</Link>
+        </p>
       </div>
     </div>
   );

@@ -9,6 +9,7 @@ const Sidebar = () => {
         <h2>Admin Panel</h2>
       </div>
       <ul className="sidebar-menu">
+        <li><Link to="/admin">Dashboard</Link></li>
         <li><Link to="/admin/categories">Quản lý danh mục</Link></li>
         <li><Link to="/admin/products">Quản lý sản phẩm</Link></li>
         <li><Link to="/admin/users">Quản lý người dùng</Link></li>

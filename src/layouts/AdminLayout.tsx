@@ -9,9 +9,10 @@ const AdminLayout = () => {
       <Sidebar />
       <div className="admin-content">
         <header className="admin-header">
+          <h1>Admin Dashboard</h1>
           <button className="logout-btn">Đăng xuất</button>
         </header>
-        <main>
+        <main className="admin-main">
           <Outlet />
         </main>
       </div>
