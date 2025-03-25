@@ -91,31 +91,31 @@
   ],
   "users": [
     {
-      "email": "khaidaofpt@gmail.com",
-      "password": "$2a$10$/3awOwJtrq/8lkndxB9A8Oq4h//cWTKEOJetQpKPfm7ZxE8OOdOby",
-      "fullName": "Đào Sỹ Khải",
-      "role": "customer",
-      "id": "1"
-    },
-    {
-      "email": "khaidao@gmail.com",
-      "password": "$2a$10$GJzUqv5NIUlxrdQfB8AO1OCTNSMDX0uYjcf9jJrWDbhTCxtYd8Buy",
-      "fullName": "Đào Sỹ Khảiiiii",
-      "role": "customer",
-      "id": "2"
-    },
-    {
-      "id": "3834",
-      "fullName": "Lê Khải Hoàn",
-      "email": "khai@gmail.com",
-      "password": "khaikhai",
+      "id": "1",
+      "fullName": "Khải Dz",
+      "email": "khaidz@gmail.com",
+      "password": "987654321",
       "role": "customer"
     },
     {
-      "id": "4577",
-      "fullName": "Lê Khải Hoàn",
-      "email": "hoan@gmail.com",
+      "id": "ea02",
+      "fullName": "Khải nek",
+      "email": "khaidao@gmail.com",
       "password": "123456",
+      "role": "customer"
+    },
+    {
+      "id": "b24f",
+      "fullName": "Đào Sỹ Khải",
+      "email": "khaidaofpt@gmail.com",
+      "password": "khaikhai",
+      "role": "admin"
+    },
+    {
+      "id": "80bd",
+      "fullName": "khaidaooo",
+      "email": "khaidaodzz@gmail.com",
+      "password": "123456789",
       "role": "customer"
     }
   ]
