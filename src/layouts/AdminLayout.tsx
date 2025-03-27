@@ -1,9 +1,17 @@
 import { Layout, Menu, Button } from "antd";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 
 const { Sider, Content } = Layout;
 
 const AdminLayout = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("user"); // Xóa thông tin đăng nhập
+    alert("✅ Đăng xuất thành công!");
+    navigate("/login"); // Chuyển hướng về trang đăng nhập
+  };
+
   return (
     <Layout style={{ minHeight: "100vh" }}>
       {/* Sidebar */}
@@ -35,9 +43,9 @@ const AdminLayout = () => {
 
       {/* Nội dung bên phải */}
       <Layout style={{ padding: "16px", background: "#fff" }}>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <h2>Admin Dashboard</h2>
-          <Button danger>Đăng xuất</Button>
+          <Button danger onClick={handleLogout}>Đăng xuất</Button>
         </div>
 
         {/* Phần này sẽ thay đổi khi bấm menu */}

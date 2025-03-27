@@ -12,6 +12,7 @@ import Dashboard from "./pages/admin/Dashboard";
 import Categories from "./pages/admin/Categories";
 import Products from "./pages/admin/Products";
 import AdminLayout from "./layouts/AdminLayout";
+import Users from "./pages/admin/Users";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route index element={<Dashboard />} /> {/* Mặc định hiển thị Dashboard */}
           <Route path="categories" element={<Categories />} />
           <Route path="products" element={<Products />} />
+          <Route path="users" element={<Users />} />
         </Route>
       </Routes>
     </Router>
