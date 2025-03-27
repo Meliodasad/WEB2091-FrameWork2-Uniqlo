@@ -1,12 +1,12 @@
 {
   "products": [
     {
-      "id": "1",
-      "name": "Áo Thun Cotton Uniqlo",
+      "name": "Áo Thun Uniqlo",
       "price": 299000,
       "image": "https://th.bing.com/th/id/OIP.I-tRRU1dAP8Lo4PIbKx-1wHaHa?rs=1&pid=ImgDetMain",
-      "description": "Áo thun cotton mềm mại, thoáng khí, phù hợp mặc hàng ngày.",
-      "category": "Áo Thun"
+      "category": "1",
+      "description": "Áo thun cotton mềm mại, thoáng khí, phù hợp mặc hàng ngày hợp với nam giới",
+      "id": "1"
     },
     {
       "id": "2",
@@ -14,7 +14,7 @@
       "price": 499000,
       "image": "https://image.uniqlo.com/UQ/ST3/WesternCommon/imagesgoods/426627/item/goods_01_426627.jpg?width=734",
       "description": "Áo polo vải pique thoáng mát, thiết kế thanh lịch phù hợp đi làm và đi chơi.",
-      "category": "Áo Polo"
+      "categoryId": "Áo Polo"
     },
     {
       "id": "3",
@@ -22,7 +22,7 @@
       "price": 799000,
       "image": "https://th.bing.com/th/id/OIP.eeLopXt8tToS34vm43j5rwHaHa?rs=1&pid=ImgDetMain",
       "description": "Áo khoác gió nhẹ, chống nước nhẹ, phù hợp cho mùa thu và xuân.",
-      "category": "Áo Khoác"
+      "categoryId": "Áo Khoác"
     },
     {
       "id": "4",
@@ -30,7 +30,7 @@
       "price": 899000,
       "image": "https://th.bing.com/th/id/OIP.CmExwoVYYjn-MupwOFDGuAHaHa?rs=1&pid=ImgDetMain",
       "description": "Quần jeans slim fit với chất liệu co giãn, tạo sự thoải mái khi mặc.",
-      "category": "Quần Jeans"
+      "categoryId": "Quần Jeans"
     },
     {
       "id": "5",
@@ -38,7 +38,7 @@
       "price": 599000,
       "image": "https://th.bing.com/th/id/R.72efdfb9f2fc097f41fe8454a5aaf098?rik=3ADAKsbkzcq3cw&pid=ImgRaw&r=0",
       "description": "Quần short thể thao, chất liệu khô nhanh, phù hợp cho các hoạt động ngoài trời.",
-      "category": "Quần Short"
+      "categoryId": "Quần Short"
     },
     {
       "id": "6",
@@ -46,7 +46,7 @@
       "price": 699000,
       "image": "https://th.bing.com/th/id/R.b362c0187cce4d3a1db49ba119315e36?rik=7YzjHNuCeceexw&pid=ImgRaw&r=0",
       "description": "Áo sơ mi phong cách đơn giản, giữ ấm tốt, phù hợp cho mùa đông.",
-      "category": "Áo Sơ Mi"
+      "categoryId": "Áo Sơ Mi"
     },
     {
       "id": "7",
@@ -54,7 +54,7 @@
       "price": 1699000,
       "image": "https://th.bing.com/th/id/OIP.w21syQrzRJI_HxtqgFj0YgHaHa?w=2000&h=2000&rs=1&pid=ImgDetMain",
       "description": "Áo BomBer phong cách đơn giản, giữ ấm tốt, phù hợp cho mùa đông.",
-      "category": "Áo Khoác"
+      "categoryId": "Áo Khoác"
     },
     {
       "id": "8",
@@ -62,7 +62,7 @@
       "price": 2699000,
       "image": "https://th.bing.com/th/id/OIP.3xQcq7M5O2LyzZocamBMgAHaHa?rs=1&pid=ImgDetMain",
       "description": "Áo Vest phong cách đơn giản, giữ ấm tốt, phù hợp cho mùa đông.",
-      "category": "Áo Vest"
+      "categoryId": "Áo Vest"
     },
     {
       "id": "9",
@@ -70,7 +70,7 @@
       "price": 699000,
       "image": "https://image.uniqlo.com/UQ/ST3/WesternCommon/imagesgoods/406532/item/goods_00_406532.jpg?width=2000",
       "description": "Áo sơ mi phong cách đơn giản, giữ ấm tốt, phù hợp cho mùa đông.",
-      "category": "Áo Sơ Mi"
+      "categoryId": "Áo Sơ Mi"
     },
     {
       "id": "10",
@@ -78,7 +78,7 @@
       "price": 399000,
       "image": "https://image.uniqlo.com/UQ/ST3/WesternCommon/imagesgoods/414410/item/goods_09_414410.jpg?width=734",
       "description": "Áo sơ mi phong cách đơn giản, giữ ấm tốt, phù hợp cho mùa đông.",
-      "category": "Áo Sơ Mi"
+      "categoryId": "Áo Sơ Mi"
     },
     {
       "id": "11",
@@ -86,7 +86,23 @@
       "price": 299000,
       "image": "https://th.bing.com/th/id/OIP.8f9wB0d2_OMlGFKVe04n0AHaHa?rs=1&pid=ImgDetMain",
       "description": "Áo sơ mi phong cách đơn giản, giữ ấm tốt, phù hợp cho mùa đông.",
-      "category": "Áo Sơ Mi"
+      "categoryId": "Áo Sơ Mi"
+    },
+    {
+      "name": "ROLEX LS340",
+      "price": 20000000,
+      "image": "https://th.bing.com/th?id=OIP.ITYhCdT2ASM8kQqHQrC2rgHaE7&w=306&h=203&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2",
+      "category": "1",
+      "description": "cccc",
+      "id": "NWO-P6V"
+    },
+    {
+      "name": "Áo Khoác Uniqilo",
+      "price": 100000,
+      "image": "https://th.bing.com/th?id=OIP.ITYhCdT2ASM8kQqHQrC2rgHaE7&w=306&h=203&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2",
+      "category": "3",
+      "description": "Áo đẹp dầy dặn và đẩy đủ số lượng mẫu mã",
+      "id": "8911"
     }
   ],
   "users": [
@@ -117,6 +133,36 @@
       "email": "khaidaodzz@gmail.com",
       "password": "123456789",
       "role": "customer"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Áo Thun"
+    },
+    {
+      "id": "2",
+      "name": "Áo Polo"
+    },
+    {
+      "id": "3",
+      "name": "Áo Khoác"
+    },
+    {
+      "id": "4",
+      "name": "Quần Jeans"
+    },
+    {
+      "id": "5",
+      "name": "Quần Short"
+    },
+    {
+      "id": "6",
+      "name": "Áo Sơ Mi"
+    },
+    {
+      "id": "7",
+      "name": "Áo Vest"
     }
   ]
 }
