@@ -90,11 +90,11 @@
       "role": "customer"
     },
     {
-      "id": "ea02",
-      "fullName": "Khải nek",
-      "email": "khaidao@gmail.com",
-      "password": "123456",
-      "role": "customer"
+      "id": "3",
+      "fullName": "phong",
+      "email": "phongdz@gmail.com",
+      "password": "123",
+      "role": "admin"
     },
     {
       "id": "b24f",
@@ -104,10 +104,10 @@
       "role": "admin"
     },
     {
-      "id": "80bd",
-      "fullName": "khaidaooo",
-      "email": "khaidaodzz@gmail.com",
-      "password": "123456789",
+      "id": "bec8",
+      "fullName": "thanh phong",
+      "email": "123@gmail.com",
+      "password": "123",
       "role": "customer"
     }
   ],
@@ -137,4 +137,9 @@
       "name": "Áo Sơ Mi"
     }
   ]
+  
+   
+  
+  
+
 }
