@@ -36,10 +36,10 @@ const Products = () => {
     try {
       if (editingProduct?._id || editingProduct?.id) {
         await updateProduct(editingProduct._id || editingProduct.id, formattedValues);
-        message.success("✅ Cập nhật sản phẩm thành công!");
-      } else {
+        message.success("Cập nhật sản phẩm thành công!");
+      } else {  
         await addProduct(formattedValues);
-        message.success("✅ Thêm sản phẩm thành công!");
+        message.success("Thêm sản phẩm thành công!");
       }
       fetchProducts();
       handleCloseModal();
@@ -59,7 +59,7 @@ const Products = () => {
 
     try {
       await deleteProduct(id);
-      message.success("✅ Xóa sản phẩm thành công!");
+      message.success("Xóa sản phẩm thành công!");
 
       // 🔥 Fix lỗi: Chỉ cập nhật state khi xóa thành công
       setProducts((prevProducts) => prevProducts.filter(product => product._id !== id && product.id !== id));
