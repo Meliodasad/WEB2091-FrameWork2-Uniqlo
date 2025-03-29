@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 const Header = () => {
   const [user, setUser] = useState<{ fullName: string } | null>(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false); // Trạng thái thanh tìm kiếm
-  const [searchQuery, setSearchQuery] = useState(""); // Giá trị tìm kiếm
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const Header = () => {
     e.preventDefault();
     if (searchQuery.trim()) {
       navigate(`/products?search=${searchQuery}`);
-      setSearchOpen(false); // Đóng thanh tìm kiếm sau khi tìm
+      setSearchOpen(false);
     }
   };
 
@@ -93,7 +93,7 @@ const Header = () => {
             </button>
           </div>
 
-          {/* Người dùng & Giỏ hàng */}
+          {/* Người dùng, Đơn hàng & Giỏ hàng */}
           <ul className="navbar-nav ms-3">
             {user ? (
               <li className="nav-item dropdown">
@@ -120,6 +120,11 @@ const Header = () => {
                 </Link>
               </li>
             )}
+            <li className="nav-item">
+            <Link className="nav-link" to="/orders">
+    <i className="fas fa-box"></i> Đơn hàng
+  </Link>
+            </li>
             <li className="nav-item">
               <Link className="nav-link" to="/cart">
                 <i className="fas fa-shopping-cart"></i>

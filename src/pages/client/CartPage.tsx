@@ -20,9 +20,8 @@ const CartPage = () => {
   };
 
   // Tính tổng tiền của sản phẩm được chọn
-  const totalAmount = cartItems.reduce((total, item) => {
-    return selectedItems[item.id] ? total + item.price * item.quantity : total;
-  }, 0);
+  const selectedProducts = cartItems.filter((item) => selectedItems[item.id]);
+  const totalAmount = selectedProducts.reduce((total, item) => total + item.price * item.quantity, 0);
 
   return (
     <>
@@ -71,8 +70,8 @@ const CartPage = () => {
                 
                 <button 
                   className="btn btn-success w-100 my-2" 
-                  onClick={() => navigate("/checkout", { state: { selectedItems } })}
-                  disabled={totalAmount === 0}
+                  onClick={() => navigate("/checkout", { state: { selectedProducts, totalAmount } })}
+                  disabled={selectedProducts.length === 0}
                 >
                   Tiến hành thanh toán
                 </button>

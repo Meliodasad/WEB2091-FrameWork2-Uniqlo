@@ -13,6 +13,10 @@ import Categories from "./pages/admin/Categories";
 import Products from "./pages/admin/Products";
 import AdminLayout from "./layouts/AdminLayout";
 import Users from "./pages/admin/Users";
+import Checkout from "./pages/client/Checkout";
+import OrdersPage from "./pages/client/OrdersPage";
+import Orders from "./pages/admin/Oders";
+import AdminDashboard from "./pages/admin/thongke";
 
 function App() {
   return (
@@ -27,13 +31,17 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/cart" element={<CartPage />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/orders" element={<OrdersPage />} />
 
         {/* Routes dành cho Admin */}
         <Route path="/admin" element={<AdminRoute><AdminLayout /></AdminRoute>}>
-          <Route index element={<Dashboard />} /> {/* Mặc định hiển thị Dashboard */}
+          <Route index element={<Dashboard />} /> {}
           <Route path="categories" element={<Categories />} />
           <Route path="products" element={<Products />} />
           <Route path="users" element={<Users />} />
+          <Route path="orders" element={<Orders />} />
+          <Route path="reports" element={<AdminDashboard />} />
         </Route>
       </Routes>
     </Router>

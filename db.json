@@ -109,6 +109,13 @@
       "email": "123@gmail.com",
       "password": "123",
       "role": "customer"
+    },
+    {
+      "id": "1df9",
+      "fullName": "Đào Sỹ Khải23",
+      "email": "khaiiii@gmail.com",
+      "password": "khaikhai",
+      "role": "customer"
     }
   ],
   "categories": [
@@ -136,10 +143,106 @@
       "id": "6",
       "name": "Áo Sơ Mi"
     }
+  ],
+  "orders": [
+    {
+      "id": "cef0",
+      "userId": "1df9",
+      "items": [
+        {
+          "id": "2",
+          "name": "Áo Polo Dry Pique Uniqlo",
+          "price": 499000,
+          "image": "https://image.uniqlo.com/UQ/ST3/WesternCommon/imagesgoods/426627/item/goods_01_426627.jpg?width=734",
+          "description": "Áo polo vải pique thoáng mát, thiết kế thanh lịch phù hợp đi làm và đi chơi.",
+          "categoryId": "Áo Polo",
+          "quantity": 1
+        },
+        {
+          "id": "5",
+          "name": "Quần Short Dry Ex Uniqlo",
+          "price": 599000,
+          "image": "https://th.bing.com/th/id/R.72efdfb9f2fc097f41fe8454a5aaf098?rik=3ADAKsbkzcq3cw&pid=ImgRaw&r=0",
+          "description": "Quần short thể thao, chất liệu khô nhanh, phù hợp cho các hoạt động ngoài trời.",
+          "categoryId": "Quần Short",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 1098000,
+      "address": {
+        "province": "Hà Nội",
+        "district": "Hoàn Kiếm",
+        "street": "312323"
+      },
+      "paymentMethod": "COD",
+      "status": "Đã hủy",
+      "createdAt": "2025-03-28T20:31:34.678Z"
+    },
+    {
+      "id": "f4b2",
+      "userId": "1df9",
+      "items": [
+        {
+          "id": "3",
+          "name": "Áo Khoác Gió Uniqlo",
+          "price": 799000,
+          "image": "https://th.bing.com/th/id/OIP.eeLopXt8tToS34vm43j5rwHaHa?rs=1&pid=ImgDetMain",
+          "description": "Áo khoác gió nhẹ, chống nước nhẹ, phù hợp cho mùa thu và xuân.",
+          "categoryId": "Áo Khoác",
+          "quantity": 1
+        },
+        {
+          "id": "2",
+          "name": "Áo Polo Dry Pique Uniqlo",
+          "price": 499000,
+          "image": "https://image.uniqlo.com/UQ/ST3/WesternCommon/imagesgoods/426627/item/goods_01_426627.jpg?width=734",
+          "description": "Áo polo vải pique thoáng mát, thiết kế thanh lịch phù hợp đi làm và đi chơi.",
+          "categoryId": "Áo Polo",
+          "quantity": 1
+        },
+        {
+          "id": "5",
+          "name": "Quần Short Dry Ex Uniqlo",
+          "price": 599000,
+          "image": "https://th.bing.com/th/id/R.72efdfb9f2fc097f41fe8454a5aaf098?rik=3ADAKsbkzcq3cw&pid=ImgRaw&r=0",
+          "description": "Quần short thể thao, chất liệu khô nhanh, phù hợp cho các hoạt động ngoài trời.",
+          "categoryId": "Quần Short",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 1897000,
+      "address": {
+        "province": "Đà Nẵng",
+        "district": "Thanh Khê",
+        "street": "dsadasd"
+      },
+      "paymentMethod": "Chuyển khoản ngân hàng",
+      "status": "Đã hủy",
+      "createdAt": "2025-03-29T04:24:16.583Z"
+    },
+    {
+      "id": "7ba4",
+      "userId": "1df9",
+      "items": [
+        {
+          "id": "5",
+          "name": "Quần Short Dry Ex Uniqlo",
+          "price": 599000,
+          "image": "https://th.bing.com/th/id/R.72efdfb9f2fc097f41fe8454a5aaf098?rik=3ADAKsbkzcq3cw&pid=ImgRaw&r=0",
+          "description": "Quần short thể thao, chất liệu khô nhanh, phù hợp cho các hoạt động ngoài trời.",
+          "categoryId": "Quần Short",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 599000,
+      "address": {
+        "province": "Hải Phòng",
+        "district": "Ngô Quyền",
+        "street": "dxsadas"
+      },
+      "paymentMethod": "Ví điện tử (Momo/ZaloPay)",
+      "status": "Đã giao",
+      "createdAt": "2025-03-29T04:38:53.599Z"
+    }
   ]
-  
-   
-  
-  
-
 }
