@@ -3,6 +3,7 @@ import Header from "../../components/Header";
 import Banner from "../../components/Banner";
 import ProductCard from "../../components/ProductCard";
 import Footer from "../../components/Footer";
+import Chat from "../../components/chat"; // Import Chat
 
 interface Product {
   id: number;
@@ -48,6 +49,9 @@ const HomePage = () => {
           ))}
         </div>
       </div>
+
+      {/* Thêm Chat */}
+      <Chat />
 
       <Footer />
     </>

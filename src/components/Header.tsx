@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { clearChatHistory } from "./chat";
 
 <link rel="stylesheet" href="header.css" />
 
@@ -17,7 +18,9 @@ const Header = () => {
     }
   }, []);
 
-  const handleLogout = () => {
+
+  const handleLogout = async () => {
+    await clearChatHistory();
     localStorage.removeItem("user");
     setUser(null);
     navigate("/");
