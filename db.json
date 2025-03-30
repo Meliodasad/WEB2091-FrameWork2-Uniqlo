@@ -243,6 +243,78 @@
       "paymentMethod": "Ví điện tử (Momo/ZaloPay)",
       "status": "Đã giao",
       "createdAt": "2025-03-29T04:38:53.599Z"
+    },
+    {
+      "id": "3362",
+      "userId": "bec8",
+      "items": [
+        {
+          "id": "2",
+          "name": "Áo Polo Dry Pique Uniqlo",
+          "price": 499000,
+          "image": "https://image.uniqlo.com/UQ/ST3/WesternCommon/imagesgoods/426627/item/goods_01_426627.jpg?width=734",
+          "description": "Áo polo vải pique thoáng mát, thiết kế thanh lịch phù hợp đi làm và đi chơi.",
+          "categoryId": "Áo Polo",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 499000,
+      "address": {
+        "province": "Hà Nội",
+        "district": "Ba Đình",
+        "street": "123"
+      },
+      "paymentMethod": "Ví điện tử (Momo/ZaloPay)",
+      "status": "Đã hủy",
+      "createdAt": "2025-03-30T12:56:46.651Z"
+    },
+    {
+      "id": "eb6e",
+      "userId": "bec8",
+      "items": [
+        {
+          "id": "3",
+          "name": "Áo Khoác Gió Uniqlo",
+          "price": 799000,
+          "image": "https://th.bing.com/th/id/OIP.eeLopXt8tToS34vm43j5rwHaHa?rs=1&pid=ImgDetMain",
+          "description": "Áo khoác gió nhẹ, chống nước nhẹ, phù hợp cho mùa thu và xuân.",
+          "categoryId": "Áo Khoác",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 799000,
+      "address": {
+        "province": "Hà Nội",
+        "district": "Hoàn Kiếm",
+        "street": "3"
+      },
+      "paymentMethod": "COD",
+      "status": "Đã hủy",
+      "createdAt": "2025-03-30T13:02:03.428Z"
+    },
+    {
+      "id": "4c07",
+      "userId": "3",
+      "items": [
+        {
+          "id": "3",
+          "name": "Áo Khoác Gió Uniqlo",
+          "price": 799000,
+          "image": "https://th.bing.com/th/id/OIP.eeLopXt8tToS34vm43j5rwHaHa?rs=1&pid=ImgDetMain",
+          "description": "Áo khoác gió nhẹ, chống nước nhẹ, phù hợp cho mùa thu và xuân.",
+          "categoryId": "Áo Khoác",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 799000,
+      "address": {
+        "province": "Hồ Chí Minh",
+        "district": "Quận 2",
+        "street": "4"
+      },
+      "paymentMethod": "Ví điện tử (Momo/ZaloPay)",
+      "status": "Đang chờ người vận chuyển",
+      "createdAt": "2025-03-30T13:09:55.716Z"
     }
   ]
 }

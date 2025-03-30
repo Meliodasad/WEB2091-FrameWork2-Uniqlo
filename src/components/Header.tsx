@@ -1,6 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+<link rel="stylesheet" href="header.css" />
+
 const Header = () => {
   const [user, setUser] = useState<{ fullName: string } | null>(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -71,27 +73,27 @@ const Header = () => {
             </li>
           </ul>
 
+         
           {/* Thanh tìm kiếm */}
-          <div className="ms-auto d-flex align-items-center">
-            {searchOpen && (
-              <form className="d-flex me-2" onSubmit={handleSearchSubmit}>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Tìm kiếm sản phẩm..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  autoFocus
-                />
-                <button type="submit" className="btn btn-light ms-2">
-                  Tìm Kiếm
-                </button>
-              </form>
-            )}
-            <button className="btn btn-dark" onClick={() => setSearchOpen(!searchOpen)}>
-              <i className="fas fa-search"></i>
-            </button>
-          </div>
+<div className="ms-auto d-flex align-items-center">
+  {searchOpen && (
+    <form className="search-form me-2" onSubmit={handleSearchSubmit}>
+      <input
+        type="text"
+        className="search-input"
+        placeholder="Tìm kiếm sản phẩm..."
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        autoFocus
+      />
+      <button type="submit" className="search-submit">Tìm</button>
+    </form>
+  )}
+  <button className="search-button" onClick={() => setSearchOpen(!searchOpen)}>
+    <i className="fas fa-search"></i>
+  </button>
+</div>
+
 
           {/* Người dùng, Đơn hàng & Giỏ hàng */}
           <ul className="navbar-nav ms-3">

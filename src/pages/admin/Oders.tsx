@@ -11,17 +11,42 @@ const statusOptions = [
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
+  const [users, setUsers] = useState({}); // Lưu userId -> fullName
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:3001/orders")
-      .then((res) => res.json())
-      .then((data) => setOrders(data));
+    const fetchOrdersAndUsers = async () => {
+      try {
+        const [ordersRes, usersRes] = await Promise.all([
+          fetch("http://localhost:3001/orders"),
+          fetch("http://localhost:3001/users")
+        ]);
+
+        const ordersData = await ordersRes.json();
+        const usersData = await usersRes.json();
+
+        // Chuyển danh sách users thành object { userId: fullName }
+        const usersMap = usersData.reduce((acc, user) => {
+          acc[user.id] = user.fullName; // Fix lỗi: Dùng fullName thay vì userName
+          return acc;
+        }, {});
+
+        setUsers(usersMap);
+        setOrders(ordersData);
+        setLoading(false);
+      } catch (error) {
+        console.error("Lỗi khi lấy dữ liệu:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchOrdersAndUsers();
   }, []);
 
   const handleStatusChange = async (orderId, newStatus) => {
     const updatedOrders = orders.map((order) => {
       if (order.id === orderId) {
-        if (order.status === "Đã hủy") return order; // Nếu đã hủy, không thay đổi trạng thái
+        if (order.status === "Đã hủy") return order; // Không thay đổi nếu đã hủy
         return { ...order, status: newStatus };
       }
       return order;
@@ -34,6 +59,8 @@ const Orders = () => {
       body: JSON.stringify({ status: newStatus })
     });
   };
+
+  if (loading) return <p className="text-center">Đang tải dữ liệu...</p>;
 
   return (
     <div className="container my-5">
@@ -52,7 +79,7 @@ const Orders = () => {
           {orders.map((order, index) => (
             <tr key={order.id}>
               <td>{index + 1}</td>
-              <td>{order.userName}</td>
+              <td>{users[order.userId] || "Không xác định"}</td>
               <td>
                 {order.items.map((item) => (
                   <div key={item.id} className="d-flex align-items-center">
