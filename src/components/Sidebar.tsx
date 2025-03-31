@@ -15,7 +15,9 @@ const Sidebar = () => {
         <li><Link to="/admin/users">Quản lý người dùng</Link></li>
         <li><Link to="/admin/employees">Quản lý nhân viên</Link></li>
         <li><Link to="/admin/orders">Quản lý đơn hàng</Link></li>
+        <li><Link to="/admin/AdminComments">Quản lý bình luận</Link></li>
         <li><Link to="/admin/reports">Thống kê doanh thu</Link></li>
+  
       </ul>
     </div>
   );

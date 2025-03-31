@@ -66,20 +66,41 @@ const ProductDetail = () => {
     navigate("/cart");
   };
 
-  const handleReviewSubmit = () => {
-    if (!newReview.user || !newReview.comment) return alert("Vui lòng nhập đầy đủ thông tin!");
-
-    const reviewData = { ...newReview, productId: id };
-    fetch("http://localhost:3001/reviews", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(reviewData),
-    })
-      .then((res) => res.json())
-      .then((data) => setReviews([...reviews, data]));
-
-    setNewReview({ user: "", comment: "", rating: 5 });
+  const handleReviewSubmit = async () => {
+    if (!newReview.user || !newReview.comment) {
+      alert("Vui lòng nhập đầy đủ thông tin!");
+      return;
+    }
+  
+    const reviewData = {
+      id: Date.now(), // Đảm bảo có ID
+      productId: id,
+      user: newReview.user,
+      comment: newReview.comment,
+      rating: newReview.rating
+    };
+  
+    try {
+      const res = await fetch("http://localhost:3001/reviews", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(reviewData),
+      });
+  
+      if (!res.ok) {
+        throw new Error(`Lỗi HTTP: ${res.status}`);
+      }
+  
+      const data = await res.json();
+      setReviews([...reviews, data]);
+      setNewReview({ user: "", comment: "", rating: 5 });
+    } catch (error) {
+      console.error("Lỗi gửi đánh giá:", error);
+      alert("Gửi đánh giá thất bại! Kiểm tra console để xem lỗi.");
+    }
   };
+  
+  
 
   if (loading || !product) return <div className="text-center">⏳ Đang tải sản phẩm...</div>;
 

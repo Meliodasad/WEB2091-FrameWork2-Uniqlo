@@ -81,6 +81,15 @@
       "categoryId": "Áo Sơ Mi"
     }
   ],
+  "reviews": [
+    {
+      "id": 1743426368887,
+      "productId": "2",
+      "user": "Thanh Phong",
+      "comment": "Bình luận thật sự có đầu óc",
+      "rating": 3
+    }
+  ],
   "users": [
     {
       "id": "1",
@@ -146,39 +155,6 @@
   ],
   "orders": [
     {
-      "id": "cef0",
-      "userId": "1df9",
-      "items": [
-        {
-          "id": "2",
-          "name": "Áo Polo Dry Pique Uniqlo",
-          "price": 499000,
-          "image": "https://image.uniqlo.com/UQ/ST3/WesternCommon/imagesgoods/426627/item/goods_01_426627.jpg?width=734",
-          "description": "Áo polo vải pique thoáng mát, thiết kế thanh lịch phù hợp đi làm và đi chơi.",
-          "categoryId": "Áo Polo",
-          "quantity": 1
-        },
-        {
-          "id": "5",
-          "name": "Quần Short Dry Ex Uniqlo",
-          "price": 599000,
-          "image": "https://th.bing.com/th/id/R.72efdfb9f2fc097f41fe8454a5aaf098?rik=3ADAKsbkzcq3cw&pid=ImgRaw&r=0",
-          "description": "Quần short thể thao, chất liệu khô nhanh, phù hợp cho các hoạt động ngoài trời.",
-          "categoryId": "Quần Short",
-          "quantity": 1
-        }
-      ],
-      "totalAmount": 1098000,
-      "address": {
-        "province": "Hà Nội",
-        "district": "Hoàn Kiếm",
-        "street": "312323"
-      },
-      "paymentMethod": "COD",
-      "status": "Đã hủy",
-      "createdAt": "2025-03-28T20:31:34.678Z"
-    },
-    {
       "id": "f4b2",
       "userId": "1df9",
       "items": [
@@ -217,7 +193,7 @@
         "street": "dsadasd"
       },
       "paymentMethod": "Chuyển khoản ngân hàng",
-      "status": "Đã hủy",
+      "status": "Đã giao",
       "createdAt": "2025-03-29T04:24:16.583Z"
     },
     {
@@ -265,7 +241,7 @@
         "street": "123"
       },
       "paymentMethod": "Ví điện tử (Momo/ZaloPay)",
-      "status": "Đã hủy",
+      "status": "Đã giao",
       "createdAt": "2025-03-30T12:56:46.651Z"
     },
     {
@@ -289,32 +265,8 @@
         "street": "3"
       },
       "paymentMethod": "COD",
-      "status": "Đã hủy",
+      "status": "Đã giao",
       "createdAt": "2025-03-30T13:02:03.428Z"
-    },
-    {
-      "id": "4c07",
-      "userId": "3",
-      "items": [
-        {
-          "id": "3",
-          "name": "Áo Khoác Gió Uniqlo",
-          "price": 799000,
-          "image": "https://th.bing.com/th/id/OIP.eeLopXt8tToS34vm43j5rwHaHa?rs=1&pid=ImgDetMain",
-          "description": "Áo khoác gió nhẹ, chống nước nhẹ, phù hợp cho mùa thu và xuân.",
-          "categoryId": "Áo Khoác",
-          "quantity": 1
-        }
-      ],
-      "totalAmount": 799000,
-      "address": {
-        "province": "Hồ Chí Minh",
-        "district": "Quận 2",
-        "street": "4"
-      },
-      "paymentMethod": "Ví điện tử (Momo/ZaloPay)",
-      "status": "Đang chờ người vận chuyển",
-      "createdAt": "2025-03-30T13:09:55.716Z"
     }
   ],
   "chats": []
