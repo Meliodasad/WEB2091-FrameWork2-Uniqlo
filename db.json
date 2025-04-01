@@ -1,14 +1,6 @@
 {
   "products": [
     {
-      "name": "Áo Thun Uniqlo",
-      "price": 9999999900,
-      "image": "https://th.bing.com/th/id/OIP.I-tRRU1dAP8Lo4PIbKx-1wHaHa?rs=1&pid=ImgDetMain",
-      "category": "1",
-      "description": "Áo thun cotton mềm mại, thoáng khí, phù hợp mặc hàng ngày hợp với nam giới",
-      "id": "1"
-    },
-    {
       "id": "2",
       "name": "Áo Polo Dry Pique Uniqlo",
       "price": 499000,
@@ -83,7 +75,7 @@
   ],
   "reviews": [
     {
-      "id": 1743426368887,
+      "id": "1743426368887",
       "productId": "2",
       "user": "Thanh Phong",
       "comment": "Bình luận thật sự có đầu óc",
@@ -91,13 +83,6 @@
     }
   ],
   "users": [
-    {
-      "id": "1",
-      "fullName": "Khải Dz",
-      "email": "khaidz@gmail.com",
-      "password": "987654321",
-      "role": "customer"
-    },
     {
       "id": "3",
       "fullName": "phong",
@@ -155,18 +140,42 @@
   ],
   "orders": [
     {
-      "id": "f4b2",
-      "userId": "1df9",
+      "id": "0d94",
+      "fullName": "Đào Sỹ Khải23",
       "items": [
         {
-          "id": "3",
-          "name": "Áo Khoác Gió Uniqlo",
-          "price": 799000,
-          "image": "https://th.bing.com/th/id/OIP.eeLopXt8tToS34vm43j5rwHaHa?rs=1&pid=ImgDetMain",
-          "description": "Áo khoác gió nhẹ, chống nước nhẹ, phù hợp cho mùa thu và xuân.",
-          "categoryId": "Áo Khoác",
+          "id": "4",
+          "name": "Quần Jeans Slim Fit Uniqlo",
+          "price": 899000,
+          "image": "https://th.bing.com/th/id/OIP.CmExwoVYYjn-MupwOFDGuAHaHa?rs=1&pid=ImgDetMain",
+          "description": "Quần jeans slim fit với chất liệu co giãn, tạo sự thoải mái khi mặc.",
+          "categoryId": "Quần Jeans",
           "quantity": 1
         },
+        {
+          "id": "6",
+          "name": "Áo Sơ Mi Uniqlo",
+          "price": 699000,
+          "image": "https://th.bing.com/th/id/R.b362c0187cce4d3a1db49ba119315e36?rik=7YzjHNuCeceexw&pid=ImgRaw&r=0",
+          "description": "Áo sơ mi phong cách đơn giản, giữ ấm tốt, phù hợp cho mùa đông.",
+          "categoryId": "Áo Sơ Mi",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 1598000,
+      "address": {
+        "province": "Cần Thơ",
+        "district": "Thốt Nốt",
+        "street": "dá"
+      },
+      "paymentMethod": "Chuyển khoản ngân hàng",
+      "status": "Đã hủy",
+      "createdAt": "2025-04-01T01:57:32.423Z"
+    },
+    {
+      "id": "f041",
+      "fullName": "thanh phong",
+      "items": [
         {
           "id": "2",
           "name": "Áo Polo Dry Pique Uniqlo",
@@ -177,52 +186,52 @@
           "quantity": 1
         },
         {
-          "id": "5",
-          "name": "Quần Short Dry Ex Uniqlo",
-          "price": 599000,
-          "image": "https://th.bing.com/th/id/R.72efdfb9f2fc097f41fe8454a5aaf098?rik=3ADAKsbkzcq3cw&pid=ImgRaw&r=0",
-          "description": "Quần short thể thao, chất liệu khô nhanh, phù hợp cho các hoạt động ngoài trời.",
-          "categoryId": "Quần Short",
+          "id": "3",
+          "name": "Áo Khoác Gió Uniqlo",
+          "price": 799000,
+          "image": "https://th.bing.com/th/id/OIP.eeLopXt8tToS34vm43j5rwHaHa?rs=1&pid=ImgDetMain",
+          "description": "Áo khoác gió nhẹ, chống nước nhẹ, phù hợp cho mùa thu và xuân.",
+          "categoryId": "Áo Khoác",
           "quantity": 1
         }
       ],
-      "totalAmount": 1897000,
+      "totalAmount": 1298000,
       "address": {
-        "province": "Đà Nẵng",
-        "district": "Thanh Khê",
-        "street": "dsadasd"
+        "province": "Hà Nội",
+        "district": "Ba Đình",
+        "street": "32"
       },
       "paymentMethod": "Chuyển khoản ngân hàng",
       "status": "Đã giao",
-      "createdAt": "2025-03-29T04:24:16.583Z"
+      "createdAt": "2025-04-01T01:59:17.505Z"
     },
     {
-      "id": "7ba4",
-      "userId": "1df9",
+      "id": "9db2",
+      "fullName": "thanh phong",
       "items": [
         {
-          "id": "5",
-          "name": "Quần Short Dry Ex Uniqlo",
-          "price": 599000,
-          "image": "https://th.bing.com/th/id/R.72efdfb9f2fc097f41fe8454a5aaf098?rik=3ADAKsbkzcq3cw&pid=ImgRaw&r=0",
-          "description": "Quần short thể thao, chất liệu khô nhanh, phù hợp cho các hoạt động ngoài trời.",
-          "categoryId": "Quần Short",
+          "id": "7",
+          "name": "Áo BomBer Uniqlo",
+          "price": 1699000,
+          "image": "https://th.bing.com/th/id/OIP.w21syQrzRJI_HxtqgFj0YgHaHa?w=2000&h=2000&rs=1&pid=ImgDetMain",
+          "description": "Áo BomBer phong cách đơn giản, giữ ấm tốt, phù hợp cho mùa đông.",
+          "categoryId": "Áo Khoác",
           "quantity": 1
         }
       ],
-      "totalAmount": 599000,
+      "totalAmount": 1699000,
       "address": {
-        "province": "Hải Phòng",
-        "district": "Ngô Quyền",
-        "street": "dxsadas"
+        "province": "Đà Nẵng",
+        "district": "Ngũ Hành Sơn",
+        "street": "32321"
       },
-      "paymentMethod": "Ví điện tử (Momo/ZaloPay)",
-      "status": "Đã giao",
-      "createdAt": "2025-03-29T04:38:53.599Z"
+      "paymentMethod": "COD",
+      "status": "Đang chờ người vận chuyển",
+      "createdAt": "2025-04-01T02:00:40.970Z"
     },
     {
-      "id": "3362",
-      "userId": "bec8",
+      "id": "d620",
+      "fullName": "Đào Sỹ Khải",
       "items": [
         {
           "id": "2",
@@ -236,17 +245,17 @@
       ],
       "totalAmount": 499000,
       "address": {
-        "province": "Hà Nội",
-        "district": "Ba Đình",
-        "street": "123"
+        "province": "Hồ Chí Minh",
+        "district": "Quận 5",
+        "street": "ư312"
       },
-      "paymentMethod": "Ví điện tử (Momo/ZaloPay)",
-      "status": "Đã giao",
-      "createdAt": "2025-03-30T12:56:46.651Z"
+      "paymentMethod": "Chuyển khoản ngân hàng",
+      "status": "Đã hủy",
+      "createdAt": "2025-04-01T02:05:24.538Z"
     },
     {
-      "id": "eb6e",
-      "userId": "bec8",
+      "id": "7d1a",
+      "fullName": "Đào Sỹ Khải",
       "items": [
         {
           "id": "3",
@@ -260,14 +269,64 @@
       ],
       "totalAmount": 799000,
       "address": {
-        "province": "Hà Nội",
-        "district": "Hoàn Kiếm",
-        "street": "3"
+        "province": "Đà Nẵng",
+        "district": "Sơn Trà",
+        "street": "3123"
       },
-      "paymentMethod": "COD",
+      "paymentMethod": "Chuyển khoản ngân hàng",
       "status": "Đã giao",
-      "createdAt": "2025-03-30T13:02:03.428Z"
+      "createdAt": "2025-04-01T02:06:06.583Z"
+    },
+    {
+      "id": "4cf6",
+      "fullName": "Đào Sỹ Khải",
+      "items": [
+        {
+          "id": "2",
+          "name": "Áo Polo Dry Pique Uniqlo",
+          "price": 499000,
+          "image": "https://image.uniqlo.com/UQ/ST3/WesternCommon/imagesgoods/426627/item/goods_01_426627.jpg?width=734",
+          "description": "Áo polo vải pique thoáng mát, thiết kế thanh lịch phù hợp đi làm và đi chơi.",
+          "categoryId": "Áo Polo",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 499000,
+      "address": {
+        "province": "Hải Phòng",
+        "district": "Hải An",
+        "street": "2313"
+      },
+      "paymentMethod": "Ví điện tử (Momo/ZaloPay)",
+      "status": "Khách hàng đã hoàn đơn",
+      "createdAt": "2025-04-01T02:23:21.724Z"
     }
   ],
-  "chats": []
+  "chats": [],
+  "cart": [
+    {
+      "id": "e7d0",
+      "fullName": "Đào Sỹ Khải23",
+      "items": [
+        {
+          "id": "2",
+          "name": "Áo Polo Dry Pique Uniqlo",
+          "price": 499000,
+          "image": "https://image.uniqlo.com/UQ/ST3/WesternCommon/imagesgoods/426627/item/goods_01_426627.jpg?width=734",
+          "description": "Áo polo vải pique thoáng mát, thiết kế thanh lịch phù hợp đi làm và đi chơi.",
+          "categoryId": "Áo Polo",
+          "quantity": 1
+        },
+        {
+          "id": "3",
+          "name": "Áo Khoác Gió Uniqlo",
+          "price": 799000,
+          "image": "https://th.bing.com/th/id/OIP.eeLopXt8tToS34vm43j5rwHaHa?rs=1&pid=ImgDetMain",
+          "description": "Áo khoác gió nhẹ, chống nước nhẹ, phù hợp cho mùa thu và xuân.",
+          "categoryId": "Áo Khoác",
+          "quantity": 1
+        }
+      ]
+    }
+  ]
 }

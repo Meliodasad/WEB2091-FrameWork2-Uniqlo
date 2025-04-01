@@ -10,13 +10,13 @@ const OrdersPage = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       const user = JSON.parse(localStorage.getItem("user") || "{}");
-      if (!user.id) {
+      if (!user.fullName) {
         alert("Vui lòng đăng nhập để xem đơn hàng.");
         navigate("/login");
         return;
       }
       try {
-        const res = await fetch(`http://localhost:3001/orders?userId=${user.id}`);
+        const res = await fetch(`http://localhost:3001/orders?fullName=${encodeURIComponent(user.fullName)}`);
         if (!res.ok) throw new Error("Không thể lấy đơn hàng");
         const data = await res.json();
         setOrders(data);
@@ -27,16 +27,16 @@ const OrdersPage = () => {
     fetchOrders();
   }, [navigate]);
 
-  const handleCancelOrder = async (orderId) => {
+  const updateOrderStatus = async (orderId, newStatus) => {
     try {
       await fetch(`http://localhost:3001/orders/${orderId}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ status: "Đã hủy" })
+        body: JSON.stringify({ status: newStatus })
       });
-      setOrders(orders.map(order => order.id === orderId ? { ...order, status: "Đã hủy" } : order));
+      setOrders(orders.map(order => order.id === orderId ? { ...order, status: newStatus } : order));
     } catch (error) {
-      alert("Lỗi khi hủy đơn hàng.");
+      alert("Lỗi khi cập nhật trạng thái đơn hàng.");
     }
   };
 
@@ -64,8 +64,11 @@ const OrdersPage = () => {
                 </div>
               ))}
               <h5 className="mt-2">Tổng tiền: <span className="text-danger">{order.totalAmount.toLocaleString()} VND</span></h5>
-              {order.status === "Chờ xử lý" && (
-                <button className="btn btn-danger mt-2" onClick={() => handleCancelOrder(order.id)}>Hủy đơn hàng</button>
+              {(order.status === "Đang giao đơn hàng đến bạn") && (
+                <>
+                  <button className="btn btn-success mt-2 me-2" onClick={() => updateOrderStatus(order.id, "Đã giao")}>Đã nhận hàng</button>
+                  <button className="btn btn-warning mt-2" onClick={() => updateOrderStatus(order.id, "Khách hàng đã hoàn đơn")}>Hoàn hàng</button>
+                </>
               )}
             </div>
           ))

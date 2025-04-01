@@ -124,7 +124,7 @@ const ProductDetail = () => {
               <button className="btn btn-dark me-2" onClick={handleAddToCart}>🛒 Thêm vào giỏ hàng</button>
               <button className="btn btn-success" onClick={handleBuyNow}>🛍️ Mua ngay</button>
             </div>
-          </div>
+          </div>  
         </div>
 
         <div className="mt-5">

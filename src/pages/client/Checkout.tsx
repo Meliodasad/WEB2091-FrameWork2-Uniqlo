@@ -19,12 +19,7 @@ const Checkout = () => {
   const { selectedProducts, totalAmount } = state || { selectedProducts: [], totalAmount: 0 };
   const navigate = useNavigate();
 
-  const [address, setAddress] = useState({
-    province: "",
-    district: "",
-    street: ""
-  });
-
+  const [address, setAddress] = useState({ province: "", district: "", street: "" });
   const [paymentMethod, setPaymentMethod] = useState("");
 
   const handleOrder = async () => {
@@ -34,14 +29,14 @@ const Checkout = () => {
     }
 
     const user = JSON.parse(localStorage.getItem("user") || "{}");
-    if (!user.id) {
+    if (!user.fullName) {
       alert("Vui lòng đăng nhập để đặt hàng!");
       navigate("/login");
       return;
     }
 
     const orderData = {
-      userId: user.id,
+      fullName: user.fullName,
       items: selectedProducts,
       totalAmount,
       address,
@@ -51,16 +46,31 @@ const Checkout = () => {
     };
 
     try {
+      // Gửi yêu cầu POST để tạo đơn hàng
       const res = await fetch("http://localhost:3001/orders", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(orderData)
       });
-
       if (!res.ok) throw new Error("Lỗi khi đặt hàng");
 
-      alert("Đặt hàng thành công!");
-      navigate("/");
+      // Lấy danh sách giỏ hàng
+      const cartRes = await fetch("http://localhost:3001/cart");
+      const cartData = await cartRes.json();
+
+      // Tìm giỏ hàng theo fullName
+      const userCart = cartData.find((c: any) => c.fullName === user.fullName);
+      if (!userCart) {
+        alert("Không tìm thấy giỏ hàng của bạn.");
+        return;
+      }
+
+      // Xóa giỏ hàng theo ID tìm được
+      const deleteRes = await fetch(`http://localhost:3001/cart/${userCart.id}`, { method: "DELETE" });
+      if (!deleteRes.ok) throw new Error("Không thể xóa giỏ hàng");
+
+      alert("Đặt hàng thành công !");
+      navigate("/orders");
     } catch (error) {
       alert("Lỗi kết nối đến server.");
     }
@@ -92,12 +102,7 @@ const Checkout = () => {
               <option value="">Chọn Quận/Huyện</option>
               {districts[address.province]?.map((dist) => <option key={dist} value={dist}>{dist}</option>)}
             </select>
-            <input 
-              type="text" 
-              className="form-control my-2" 
-              placeholder="Số nhà, đường..." 
-              onChange={(e) => setAddress({ ...address, street: e.target.value })} 
-            />
+            <input type="text" className="form-control my-2" placeholder="Số nhà, đường..." onChange={(e) => setAddress({ ...address, street: e.target.value })} />
             <h4 className="fw-bold mt-3">Phương thức thanh toán</h4>
             <select className="form-select my-2" onChange={(e) => setPaymentMethod(e.target.value)}>
               <option value="">Chọn phương thức</option>

@@ -24,7 +24,10 @@ const AdminDashboard = () => {
         let totalProductsSold = 0;
 
         orders.forEach((order) => {
-          totalRevenue += order.totalAmount;
+          // Chỉ tính doanh thu khi trạng thái là "Đã giao"
+          if (order.status === "Đã giao") {
+            totalRevenue += order.totalAmount;
+          }
           statusCount[order.status] = (statusCount[order.status] || 0) + 1;
           order.items.forEach((item) => {
             totalProductsSold += item.quantity;

@@ -7,7 +7,7 @@ import axios from "axios";
 <link rel="stylesheet" href="chat.css" />
 
 export const clearChatHistory = async () => {
-  await axios.get("http://localhost:3000/chats").then(async (res) => {
+  await axios.get("http://localhost:3001/chats").then(async (res) => {
     const chatIds = res.data.map((chat: { id: string }) => chat.id);
     await Promise.all(chatIds.map((id: string) => axios.delete(`http://localhost:3000/chats/${id}`)));
   });
@@ -21,7 +21,7 @@ const Chat: React.FC = () => {
 
   // Lấy lịch sử tin nhắn từ db.json
   useEffect(() => {
-    axios.get("http://localhost:3000/chats").then((res) => {
+    axios.get("http://localhost:3001/chats").then((res) => {
       setMessages(res.data.slice(2)); // Bỏ hai dòng đầu tiên
     });
   }, []);
@@ -42,7 +42,7 @@ const Chat: React.FC = () => {
     setInputMessage("");
 
     // Lưu vào db.json
-    await axios.post("http://localhost:3000/chats", newMessage);
+    await axios.post("http://localhost:3001/chats", newMessage);
 
     // Phản hồi tự động từ tổng đài
     setTimeout(async () => {
@@ -53,7 +53,7 @@ const Chat: React.FC = () => {
         timestamp: new Date().toISOString(),
       };
       setMessages([...updatedMessages, botResponse]);
-      await axios.post("http://localhost:3000/chats", botResponse);
+      await axios.post("http://localhost:3001/chats", botResponse);
     }, 1000);
   };
 

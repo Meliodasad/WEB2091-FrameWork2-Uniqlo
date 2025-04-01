@@ -1,27 +1,53 @@
-import { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "../../store/store";
-import { removeFromCart, updateQuantity, clearCart } from "../../store/cartSlice";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
 const CartPage = () => {
-  const cartItems = useSelector((state: RootState) => state.cart.items);
-  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const user = localStorage.getItem("user");
+  const fullName = user ? JSON.parse(user).fullName : "";
+  const [cartItems, setCartItems] = useState([]);
+  const [selectedItems, setSelectedItems] = useState<{ [key: string]: boolean }>({});
+  const [totalAmount, setTotalAmount] = useState(0);
 
-  // State lưu sản phẩm được chọn
-  const [selectedItems, setSelectedItems] = useState<{ [key: number]: boolean }>({});
+  useEffect(() => {
+    if (!fullName) return;
 
-  // Chọn/Bỏ chọn sản phẩm
-  const toggleSelectItem = (id: number) => {
-    setSelectedItems((prev) => ({ ...prev, [id]: !prev[id] }));
+    fetch(`http://localhost:3001/cart?fullName=${fullName}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.length > 0) {
+          setCartItems(data[0].items);
+        }
+      })
+      .catch((error) => console.error("Lỗi khi lấy giỏ hàng:", error));
+  }, [fullName]);
+
+  const toggleSelectItem = (id: string) => {
+    setSelectedItems((prev) => {
+      const newSelectedItems = { ...prev, [id]: !prev[id] };
+      calculateTotalAmount(newSelectedItems);
+      return newSelectedItems;
+    });
   };
 
-  // Tính tổng tiền của sản phẩm được chọn
-  const selectedProducts = cartItems.filter((item) => selectedItems[item.id]);
-  const totalAmount = selectedProducts.reduce((total, item) => total + item.price * item.quantity, 0);
+  const calculateTotalAmount = (newSelectedItems: { [key: string]: boolean }) => {
+    let total = 0;
+    cartItems.forEach((item) => {
+      if (newSelectedItems[item.id]) {
+        total += item.price * item.quantity;
+      }
+    });
+    setTotalAmount(total);
+  };
+
+  const handleCheckout = () => {
+    const selectedProducts = cartItems.filter((item) => selectedItems[item.id]);
+
+    // Điều hướng đến trang Checkout và truyền dữ liệu giỏ hàng
+    navigate("/checkout", { state: { selectedProducts, totalAmount } });
+  };
 
   return (
     <>
@@ -52,36 +78,26 @@ const CartPage = () => {
                     min="1"
                     value={item.quantity}
                     className="form-control w-25 mx-2"
-                    onChange={(e) => dispatch(updateQuantity({ id: item.id, quantity: Number(e.target.value) }))}
+                    onChange={(e) => updateQuantity(item.id, Number(e.target.value))}
                   />
                   <p className="fw-bold">{(item.price * item.quantity).toLocaleString()} VND</p>
-                  <button onClick={() => dispatch(removeFromCart(item.id))} className="btn btn-danger ms-3">
-                    Xóa
-                  </button>
                 </div>
               ))}
             </div>
 
-            {/* Cột Tổng Tiền & Thanh Toán */}
             <div className="col-lg-4">
               <div className="p-4 bg-light rounded shadow">
                 <h4 className="fw-bold">Tóm tắt đơn hàng</h4>
-                <p className="fw-bold">Tổng tiền: <span className="text-danger">{totalAmount.toLocaleString()} VND</span></p>
-                
-                <button 
-                  className="btn btn-success w-100 my-2" 
-                  onClick={() => navigate("/checkout", { state: { selectedProducts, totalAmount } })}
-                  disabled={selectedProducts.length === 0}
+                <p className="fw-bold">
+                  Tổng tiền: <span className="text-danger">{totalAmount.toLocaleString()} VND</span>
+                </p>
+
+                <button
+                  className="btn btn-success w-100 my-2"
+                  onClick={handleCheckout}
+                  disabled={totalAmount === 0}
                 >
                   Tiến hành thanh toán
-                </button>
-
-                <button 
-                  className="btn btn-dark w-100" 
-                  onClick={() => dispatch(clearCart())}
-                  disabled={cartItems.length === 0}
-                >
-                  Xóa toàn bộ giỏ hàng
                 </button>
               </div>
             </div>
