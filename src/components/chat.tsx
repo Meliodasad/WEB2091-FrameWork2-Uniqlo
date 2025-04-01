@@ -9,7 +9,7 @@ import axios from "axios";
 export const clearChatHistory = async () => {
   await axios.get("http://localhost:3001/chats").then(async (res) => {
     const chatIds = res.data.map((chat: { id: string }) => chat.id);
-    await Promise.all(chatIds.map((id: string) => axios.delete(`http://localhost:3000/chats/${id}`)));
+    await Promise.all(chatIds.map((id: string) => axios.delete(`http://localhost:3001/chats/${id}`)));
   });
 };
 

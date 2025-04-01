@@ -73,9 +73,7 @@
       "categoryId": "Áo Sơ Mi"
     }
   ],
-  "reviews": [
-
-  ],
+  "reviews": [],
   "users": [
     {
       "id": "3",
@@ -294,6 +292,30 @@
       "paymentMethod": "Ví điện tử (Momo/ZaloPay)",
       "status": "Khách hàng đã hoàn đơn",
       "createdAt": "2025-04-01T02:23:21.724Z"
+    },
+    {
+      "id": "586a",
+      "fullName": "phong",
+      "items": [
+        {
+          "id": "3",
+          "name": "Áo Khoác Gió Uniqlo",
+          "price": 799000,
+          "image": "https://th.bing.com/th/id/OIP.eeLopXt8tToS34vm43j5rwHaHa?rs=1&pid=ImgDetMain",
+          "description": "Áo khoác gió nhẹ, chống nước nhẹ, phù hợp cho mùa thu và xuân.",
+          "categoryId": "Áo Khoác",
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 799000,
+      "address": {
+        "province": "Hà Nội",
+        "district": "Ba Đình",
+        "street": "9"
+      },
+      "paymentMethod": "COD",
+      "status": "Đang chuẩn bị hàng",
+      "createdAt": "2025-04-01T03:34:09.263Z"
     }
   ],
   "chats": [],

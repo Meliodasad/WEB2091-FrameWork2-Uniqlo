@@ -6,11 +6,12 @@ import Footer from "../../components/Footer";
 import Banner from "../../components/Banner"; // Thêm banner
 
 interface Product {
-  id: number;
+  id: string;
   name: string;
   price: number;
   image: string;
-  category: string;
+  description: string;
+  categoryId: string;
 }
 
 const useQuery = () => {
@@ -29,6 +30,7 @@ const ProductPage = () => {
   const query = useQuery();
   const searchParam = query.get("search") || "";
 
+  // Fetch products and categories
   useEffect(() => {
     fetch("http://localhost:3001/products")
       .then((res) => res.json())
@@ -37,7 +39,7 @@ const ProductPage = () => {
         setFilteredProducts(data);
 
         // Lấy danh mục duy nhất từ sản phẩm
-        const uniqueCategories = [...new Set(data.map((product) => product.category))];
+        const uniqueCategories = [...new Set(data.map((product) => product.categoryId))];
         setCategories(uniqueCategories);
       })
       .catch((error) => console.error("Lỗi tải sản phẩm:", error));
@@ -47,24 +49,29 @@ const ProductPage = () => {
   useEffect(() => {
     let filtered = products;
 
+    // Kiểm tra và lọc theo danh mục
     if (selectedCategory) {
-      filtered = filtered.filter((product) => product.category === selectedCategory);
+      filtered = filtered.filter((product) => product.categoryId === selectedCategory);
     }
 
+    // Kiểm tra và lọc theo giá
     if (selectedPrice) {
       const [min, max] = selectedPrice.split("-").map(Number);
       filtered = filtered.filter((product) => product.price >= min && product.price <= max);
     }
 
-    if (searchParam) {
+    // Kiểm tra và lọc theo tìm kiếm
+    if (searchParam || searchQuery) {
       filtered = filtered.filter((product) =>
-        product.name.toLowerCase().includes(searchParam.toLowerCase())
+        product.name.toLowerCase().includes(searchParam.toLowerCase() || searchQuery.toLowerCase())
       );
     }
 
     setFilteredProducts(filtered);
-    setCurrentPage(1);
-  }, [selectedCategory, selectedPrice, searchParam, products]);
+    setCurrentPage(1); // Reset lại trang khi có sự thay đổi lọc
+    console.log(categories);
+    
+  }, [selectedCategory, selectedPrice, searchParam, searchQuery, products]);
 
   // Phân trang
   const indexOfLastProduct = currentPage * productsPerPage;
@@ -102,8 +109,10 @@ const ProductPage = () => {
           <div className="col-md-4">
             <select className="form-select" value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
               <option value="">Tất cả danh mục</option>
-              {categories.map((category, index) => (
-                <option key={index} value={category}>{category}</option>
+              {categories.map((categoryId, index) => (
+                <option key={index} value={categoryId}>
+                  {categoryId}
+                </option>
               ))}
             </select>
           </div>
