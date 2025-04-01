@@ -35,6 +35,9 @@ const AdminLayout = () => {
           <Menu.Item key="orders">
             <Link to="/admin/orders">Quản lý đơn hàng</Link>
           </Menu.Item>
+          <Menu.Item key="AdminComments">
+            <Link to="/admin/AdminComments">Quản lý bình luận</Link>
+          </Menu.Item>
           <Menu.Item key="reports">
             <Link to="/admin/reports">Thống kê doanh thu</Link>
           </Menu.Item>
